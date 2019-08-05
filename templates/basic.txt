@@ -1,0 +1,11 @@
+# Please enter the question and answer for your card. Lines starting
+# with '#' will be ignored. Adding a tag is optional
+#
+# Card type: Basic
+#
+# Question:
+
+# Answer:
+
+# Tag:
+
