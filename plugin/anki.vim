@@ -29,7 +29,7 @@ function! AnkiInit() "{{{
     " changes directory
     execute ':cd ' . g:anki_card_directory
     " autoload#ankicardtemplate from autoload
-    call anki#ankicardtemplate(Basic)
+    call anki#ankicardtemplate(Basic, 0)
 endfunction "}}}
 function! AnkiFinish() "{{{
     
