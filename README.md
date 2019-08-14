@@ -21,7 +21,7 @@ A typical case usage is below:
       * Shut off all distractions before doing work!
 	%%@a Shut off all distractions before doing work
 ```
-`%%` is the syntax for comments in vimwiki and gets ignored when converting to HTML. The key marks here are `@q` and `@a`. These dictate which fields are being filled into the tsv. It is *critical*  that you have a space from the mark to the question/answer. _Why?_ Well, look [below](https://github/Shaedil/vim-anki#future-plans).
+`%%` is the syntax for comments in vimwiki and gets ignored when converting to HTML. The key marks here are `@q` and `@a`. These dictate which fields are being filled into the tsv. It is *critical*  that you have a space from the mark to the question/answer. _Why?_ Well, look [below](https://github.com/Shaedil/vim-anki/tree/dev#future-plans).
 ## Installation
 ### Pathogen:
 Just download the zip file and extract to the 'bundle' folder
