@@ -1,7 +1,6 @@
 # vim-anki
 [![Vim](https://img.shields.io/badge/BUILT%20WITH-VIM-brightgreen?style=for-the-badge&labelColor=64dd17)](https://github.com/vim/vim)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://github.com/Shaedil/vim-anki)
-
 Vim-anki is a vim plugin that allows you to create cards within [vimwiki](https://github.com/vimwiki/vimwiki). As of right now, vim-anki allows you to create with the default card types within the anki program itself, which includes:
 - [ ] Basic
 - [ ] Basic and reversed
@@ -25,13 +24,11 @@ A typical case usage is below:
 ## Installation
 ### Pathogen:
 Just download the zip file and extract to the 'bundle' folder
-
 ### Vim-plug: 
 Add the following snippet to your vimrc if you are comfortable with vim-plug
 ```vim
 Plug 'Shaedil/vim-anki'
 ```
-
 ## Future plans
 * Not necessarily in order!
 - [ ] '@q' works anywhere, not just limited to vimwiki
