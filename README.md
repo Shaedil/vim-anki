@@ -1,6 +1,7 @@
 # vim-anki
 [![Vim](https://img.shields.io/badge/BUILT%20WITH-VIM-brightgreen?style=for-the-badge&labelColor=64dd17)](https://github.com/vim/vim)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](https://github.com/Shaedil/vim-anki)
+
 Vim-anki is a vim plugin that allows you to create cards within [vimwiki](https://github.com/vimwiki/vimwiki). As of right now, vim-anki allows you to create with the default card types within the anki program itself, which includes:
 - [ ] Basic
 - [ ] Basic and reversed
@@ -20,7 +21,7 @@ A typical case usage is below:
       * Shut off all distractions before doing work!
 	%%@a Shut off all distractions before doing work
 ```
-`%%` is the syntax for comments in vimwiki and gets ignored when converting to HTML. The key marks here are `@q` and `@a`. These dictate which fields are being filled into the tsv. It is *critical*  that you have a space from the mark to the question/answer. _Why?_ Well, look [below](https://github/Shaedil/vim-anki#future-plans).
+`%%` is the syntax for comments in vimwiki and gets ignored when converting to HTML. The key marks here are `@q` and `@a`. These dictate which fields are being filled into the tsv. It is *critical*  that you have a space from the mark to the question/answer. _Why?_ Well, look [below](https://github.com/Shaedil/vim-anki/tree/dev#future-plans).
 ## Installation
 ### Pathogen:
 Just download the zip file and extract to the 'bundle' folder
