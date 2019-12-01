@@ -16,8 +16,8 @@ let g:anki_card_directory = $HOME . '\vimankicards'
 
 " command Anki2tsv :execute ':call AnkiInit()'
 " Some let statements for the functions below
-let questionmark = '%%@q'
-let answermark = '%%@a'
+let g:questionmark = '%%@q'
+let g:answermark = '%%@a'
 
 command Anki execute ':call AnkiInit()'
 
@@ -42,23 +42,28 @@ endfunction "}}}
 function! AnkiFindFirstCard() "{{{
 " %%@q hell yeah nigar?
 " %%@a Nigardly so
-	let l:questionlinefound = search(questionmark)
+	let questionlinefound = search("%%@q")
 	" The above line jumps to the first instance of the mark in the text file
 	silent execute 'normal! W"qy$' | "jump past marker and then yank to register q
-	let l:answerlinefound = search(answermark) "returns linenumber
+	let answerlinefound = search("%%@a") "returns linenumber
 	silent execute 'normal! W"ay$' | "jump past marker and then yank to register a
 	silent execute 'call AnkiAddCard()'
 
 endfunction
+let s:counter = 0
 function! AnkiAddCard()
 	" Opens an empty tab, then opens the mastercsv file and then appends the yanks
 	" at the last line
-	tabnew 
+	if s:counter == 0
+		tabnew 
+		let s:counter = 1
+	endif
 	execute 'cd $HOME\vimankicards'
 	e Ankimasterdeck.csv
 	normal! Go
 	normal! $"qp
-	normal! G$a,
+	normal! G$a, 
 	normal! "ap
+	w
 	tabp
 endfunction
