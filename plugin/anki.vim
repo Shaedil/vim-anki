@@ -10,7 +10,7 @@ if exists("g:loaded_ankivim")
 endif
 let g:loaded_ankivim = 1
 
-let g:anki_card_directory = $HOME . '\vimankicards'
+let g:anki_card_directory = $HOME . '/vimankicards'
 
 " Some let statements for the functions below
 let g:questionmark = '%%@q'
@@ -22,7 +22,7 @@ function AnkiInit()
 	if !isdirectory(g:anki_card_directory)
 		execute 'call AnkiCreateFiles()'
 	endif
-	execute 'call AnkiFindFirstCard()'
+        execute 'call AnkiFindFirstCard()'
 endfunction
 
 function! AnkiCreateFiles() "{{{
@@ -47,12 +47,11 @@ function! AnkiDeckSpecificFileGenerator(num_of_decks)
 endfunction
 " Works in current buffer
 function! AnkiFindFirstCard() "{{{
-	let questionlinefound = search("%%@q") "returns line containing question
-	" The above line jumps to the first instance of the mark in the text file
+	let questionlinefound = search("%%@q")  "moves cursor to line containing question
 	silent execute 'normal! W"qy$' | "jump past marker and then yank to register q
-	let answerlinefound = search("%%@a") "returns line containing answer
+	let answerlinefound = search("%%@a") "moves cursor to line containing answer
 	silent execute 'normal! W"ay$' | "jump past marker and then yank to register a
-	let answerlinefound = search("%%@t") "returns line containing tag
+	let answerlinefound = search("%%@t") "moves cursor to line containing tags
 	silent execute 'normal! W"ty$' | "jump past marker and then yank to register t
 	silent execute 'call AnkiAddCard()'
 
@@ -74,6 +73,8 @@ function! AnkiAddCard()
 	tabp
 endfunction
 function! AnkiWhatCard(cardtype)
+    " Manually pasting question lines, answer lines and tag lines using yank
+    " registers a and p and appending commas between them.
 	if a:cardtype == 'basic'
 		normal! $"qp
 		normal! G$a, 
